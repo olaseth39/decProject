@@ -1,0 +1,21 @@
+{
+  "name": "decproject",
+  "version": "1.0.0",
+  "description": "fake api",
+  "main": "index",
+  "scripts": {
+    "json:server": "json server --watch db.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "decproject"
+  },
+  "keywords": [
+    "yes"
+  ],
+  "author": "Abiola",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.15.1"
+  }
+}

@@ -1,0 +1,30 @@
+/* body {
+    background: blue
+} */
+
+#logoimage{
+    width: 100px;
+    margin-left: 20px
+}
+
+#background-image{
+    background-image: url("background-image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: blue;
+    height: 700px;
+    width: 100%
+}
+
+#giv-margin-top {
+    margin-top: 20px
+}
+
+#display-block{
+    display: block
+}
+
+footer{
+    margin-top: 50px;
+    background-color: black
+}

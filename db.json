@@ -1,0 +1,72 @@
+{
+    "posts" : [
+        {
+            "id" : 1,
+            "state": "Lagos" ,
+            "type" : "Bungalow",
+            "image" : "uploadfile",
+            "area" : "Ajah",
+            "date" : "24/5/2019"
+        },
+
+        {
+            "id" : 2,
+            "state": "Lagos" ,
+            "type" : "3 Bedroom flat",
+            "image" : "uploadfile",
+            "area" : "Ajah",
+            "date" : "24/5/2019"
+        },
+
+        {
+            "id" : 3,
+            "state": "Ogun" ,
+            "type" : "2 Bedroom Flat",
+            "image" : "uploadfile",
+            "area" : "Oniru",
+            "date" : "24/5/2019"
+        }
+
+    ],
+
+    "users": [
+        {
+            "id" : 1,
+            "firstname" : "Seth",
+            "lastname" : "Olubayo",
+            "email" : "name@gmail.com",
+            "phoneno" : "0000000000000",
+            "roleId": 1
+        },
+
+        {
+            "id" : 2,
+            "firstname" : "Seth",
+            "lastname" : "Olubayo",
+            "email" : "name@gmail.com",
+            "phoneno" : "0000000000000",
+            "roleId": 2
+        },
+
+        {
+            "id" : 3,
+            "firstname" : "Seth",
+            "lastname" : "Olubayo",
+            "email" : "name@gmail.com",
+            "phoneno" : "0000000000000",
+            "roleId": 2
+        }
+    ],
+
+    "roles" : [
+        {
+            "id" : 1,
+            "roleName" : "admin"
+        },
+
+        {
+            "id" : 2,
+            "roleName" : "visitor"
+        }
+    ]
+}
