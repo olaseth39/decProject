@@ -28,3 +28,18 @@ footer{
     margin-top: 50px;
     background-color: black
 }
+
+#login-bg-color {
+    background-color: black
+}
+
+#login-form-div{
+    border: 1px solid blue;
+    border-radius: 10px;
+    background-color: blue;
+    
+}
+
+#add-margin-top-to-login-form{
+    margin-top: 80px
+}
