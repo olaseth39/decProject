@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <title>DecProject</title>
+</head>
+<body id="login-bg-image">
+    <div class="row" id="add-margin-top-to-login-form">
+        <div class="col-md-4">
+            <a href="index.html"><button class="btn btn-primary">Home</button></a>
+        </div>
+        <div class="col-md-4 offset-md-4 card white" id="login-form-div">
+            <form>
+                <h2 style="text-align: center">Sign In</h2>
+                <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter name">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
+                    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="phoneno">Phone No</label>
+                    <input type="text" class="form-control" id="phoneno" placeholder="Enter your phone number">
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary" id="butt">Submit</button>
+            </form>
+            <br>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+    </div>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js"integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script> -->   
+</body>
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script>console.log('hiiiiiii')</script>
+<!-- <script src="./js/app.js"></script> -->
+<script>
+        $(document).ready(function(){
+            $("butt").click(function(e){
+            e.preventDefault();
+            let email = $('#email').val();
+            let phoneno = $('#phoneno').val();
+            let name = $('#name').val();
+            console.log(email)
+            console.log(phoneno)
+            console.log(name)
+           
+            $.ajax({
+                url: "http://localhost:3000/users", success: function (result) {
+                    alert('Details saved successfully');
+                    reset();
+                },
+                method: "POST",
+                data: {
+                    name,
+                    email,
+                    phoneno,
+                    //date
+                }
+            })
+        })
+        })       
+</script>
+</html>
