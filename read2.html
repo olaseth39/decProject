@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <title>Read Posts</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-1"> 
+        </div>
+        <div class="col-md-10 offset-md-4 table-responsive">
+            <a href="index.html"><button class='btn btn-default'>Home</button></a>
+            <h2>View Posts</h2>
+            <table class="table table-striped table-bordered" id="post_table">
+                <tr>
+                    <th>S/N</th>
+                    <th>Building type</th>
+                    <th>Building area</th>
+                    <th>State</th>
+                    <th>Date</th>
+                    <th>Building Image</th>
+                    <th>Actions</th>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-1">
+        </div>
+    </div>    
+</body>
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script>
+        var getAllData;
+        $(document).ready(function(){
+            var post_table = '';
+            getAllData();
+            function getAllData(){
+                $.ajax({
+                url : "http://localhost:3000/posts",
+                dataType : 'json',
+                type : 'get',
+                //let post_table = ''
+                success : function(data){
+                    //let post_table = '',
+                    $(data).each(function(index, value) {
+                        post_table += '<tr>'
+                        post_table += '<td>' + value.id + '</td>';
+                        post_table += '<td>' + value.type + '</td>';
+                        post_table += '<td>' + value.area + '</td>';
+                        post_table += '<td>' + value.state + '</td>';
+                        post_table += '<td>' + value.date + '</td>';
+                        post_table += '<td>' + value.image + '</td>';
+                        post_table += '<td>' + "<a href='edit.html'>Edit</a>" + ' | ' + 
+                            "<button onclick='removeData' class='btn btn-danger'>Delete</button>" + '</td>';
+                        post_table += '</tr>';
+                        //console.log(removeData)
+                        //deleteData(id);
+                    });
+                    $('#post_table').append(post_table);
+                }   
+            });
+            }
+             function removeData(){
+                 $.ajax({
+                     url : "http://localhost:3000/posts/" + id,
+                     method : 'DELETE',
+                     success : function(){
+                         alert('Record has been deleted');                    
+                     },
+                     error : function(error){
+                         alert(error);
+                     }
+                 })
+            }
+        }); 
+        
+        
+        
+</script>
+</html>
