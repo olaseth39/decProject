@@ -8,12 +8,54 @@
 }
 
 #background-image{
-    background-image: url("background-image.jpg");
+    background-image: url("background-image2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: blue;
-    height: 700px;
-    width: 100%
+    height: 100vh;
+    width: 100%;
+    position: relative
+}
+
+#login-bg-image{
+    background-image: url('images3.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    
+}
+
+#post-bg-image{
+    background-image: url('images5.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.inner{
+    position: absolute;
+    width: 100%;
+    background-color: #0009;
+    transform: translate(-50%, -50%);
+    top: 35%;
+    left: 50%
+}
+
+#word-on-image{
+    color : #fff;
+    font-size : 70px;
+    font-family : Ariel;
+    margin-top: 100px;
+    left: 50%;
+    text-align : center
+}
+
+#house-listing-p{
+    font-size: 50px;
+    font-family: Ariel;
+    color: blueviolet;
+    text-align : center
 }
 
 #giv-margin-top {
@@ -21,7 +63,10 @@
 }
 
 #display-block{
-    display: block
+    display: inline;
+    margin: 50px;
+    margin-left: 50px;
+    font: 20px
 }
 
 footer{
@@ -29,9 +74,9 @@ footer{
     background-color: black
 }
 
-#login-bg-color {
+/* #login-bg-color {
     background-color: black
-}
+} */
 
 #login-form-div{
     border: 1px solid blue;
@@ -42,4 +87,16 @@ footer{
 
 #add-margin-top-to-login-form{
     margin-top: 80px
+}
+
+tr td .edit {
+    display: none
+}
+
+tr td.edit .edit{
+    display: initial
+}
+
+tr td.edit .edit{
+    display: none
 }
