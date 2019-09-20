@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <title>Read Posts</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-1"> 
+        </div>
+        <div class="col-md-10 offset-md-4 table-responsive">
+            <a href="index.html"><button class='btn btn-default'>Home</button></a>
+            <h2>View Posts</h2>
+            <table class="table table-striped table-bordered" id="post_table">
+                <tr>
+                    <th>S/N</th>
+                    <th>Building type</th>
+                    <th>Building area</th>
+                    <th>State</th>
+                    <th>Date</th>
+                    <th>Building Image</th>
+                    <th>Actions</th>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-1">
+        </div>
+    </div>    
+</body>
+<script src="./js/jquery-3.4.1.min.js"></script>
+<script>
+        var getAllData;
+        $(document).ready(function(){
+            var post_table = '';
+            getAllData();
+            function getAllData(){
+                $.ajax({
+                url : "http://localhost:3000/posts",
+                dataType : 'json',
+                type : 'get',
+                //let post_table = ''
+                success : function(data){
+                    //let post_table = '',
+                    $(data).each(function(index, value) {
+                        post_table += '<tr>'
+                        post_table += '<td>' + value.id + '</td>';
+                        post_table += '<td>' + "<span class = 'noedit'>" + value.type + '</span>' + "<input class='edit name'>" + '</td>';
+                        post_table += '<td>' + "<span class = 'noedit'>" + value.area + '</span>' + "<input class='edit name'>" + '</td>';
+                        post_table += '<td>' + "<span class = 'noedit'>" + value.state + '</span>' + "<input class='edit name'>" + '</td>';
+                        post_table += '<td>' + "<span class = 'noedit'>" + value.date + '</span>' + "<input class='edit name'>" + '</td>';
+                        post_table += '<td>' + "<span class = 'noedit'>" + value.image + '</span>' + "<input class='edit name'>" + '</td>';
+                        post_table += '<td>' + "<a href='#' class='editPost noedit'>Edit</a>" + ' | ' + 
+                            `<button class='btn btn-danger del' data-id=${value.id}>Delete</button>` + 
+                            `<button class='btn btn-danger del saveEdit edit' data-id=${value.id}>Update</button>` +
+                            `<button class='btn btn-danger del cancelEdit edit' data-id=${value.id}>X Update</button>` +
+                             '</td>';
+                        post_table += '</tr>';
+                        //console.log(removeData)
+                        //deleteData(id);
+                    });
+                    $('#post_table').append(post_table);
+
+                    $('.del').on('click',function(e){
+                               //console.log(e.target.dataset.id)
+                               //confirm before deleting
+                               if(confirm("Sure you want to delete?")){
+                                $.ajax({
+                            url:"http://localhost:3000/posts/"+ e.target.dataset.id,
+                            method:"DELETE",
+                            success:function(result){
+                                alert('Post deleted!') 
+                            },
+                            
+                        })
+                     };
+                 });
+
+                 //editing
+                 $posts.delegate('.editPost', 'click', function(){
+                     var $td = $(this).closest('td');
+                     $td.find('input.type').val($td.find(span.type).html());
+                     $td.find('input.area').val($td.find(span.area).html());
+                     $td.find('input.state').val($td.find(span.state).html());
+                     $td.find('input.date').val($td.find(span.date).html());
+                     $td.find('input.image').val($td.find(span.image).html());
+                     $td.addClass('edit')
+
+                 })
+                }   
+            });
+        }
+    })      
+</script>
+</html>
