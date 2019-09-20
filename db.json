@@ -15,14 +15,6 @@
       "image": "uploadfile",
       "area": "Ajah",
       "date": "24/5/2019"
-    },
-    {
-      "id": 3,
-      "state": "Ogun",
-      "type": "2 Bedroom Flat",
-      "image": "uploadfile",
-      "area": "Oniru",
-      "date": "24/5/2019"
     }
   ],
   "users": [
@@ -49,6 +41,30 @@
       "email": "sethabiola@yahoo.com",
       "phoneno": "09057754868",
       "id": 4
+    },
+    {
+      "name": "Tayo",
+      "email": "olubajo@gmail.com",
+      "phoneno": "09057754646",
+      "id": 5
+    },
+    {
+      "name": "Tayo",
+      "email": "olubajo@gmail.com",
+      "phoneno": "09057754646",
+      "id": 6
+    },
+    {
+      "name": "Wole",
+      "email": "wole@gmail.com",
+      "phoneno": "0900000000",
+      "id": 7
+    },
+    {
+      "name": "",
+      "email": "",
+      "phoneno": "",
+      "id": 8
     }
   ],
   "roles": [
